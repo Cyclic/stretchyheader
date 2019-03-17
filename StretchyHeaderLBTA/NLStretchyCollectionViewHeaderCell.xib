@@ -22,15 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="177" height="148"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-eh-v7V">
+                        <rect key="frame" x="0.0" y="-152" width="177" height="300"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="uRT-dK-p6c"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.18823529410000001" green="0.74509803919999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="b5h-qo-91Y" firstAttribute="height" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="height" priority="750" id="A92-wY-qXx"/>
+                <constraint firstAttribute="trailing" secondItem="TFk-eh-v7V" secondAttribute="trailing" id="Ggt-EV-gXa"/>
                 <constraint firstItem="b5h-qo-91Y" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="NXe-KY-pFB"/>
                 <constraint firstItem="b5h-qo-91Y" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="YrT-3H-ltk"/>
+                <constraint firstAttribute="bottom" secondItem="TFk-eh-v7V" secondAttribute="bottom" id="b7N-xy-40i"/>
                 <constraint firstItem="b5h-qo-91Y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="f5Q-XB-Dzc"/>
                 <constraint firstItem="b5h-qo-91Y" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="krj-ZD-ZxU"/>
+                <constraint firstItem="TFk-eh-v7V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tET-Wx-6kr"/>
             </constraints>
             <size key="customSize" width="177" height="148"/>
             <connections>
@@ -39,4 +48,7 @@
             <point key="canvasLocation" x="231.19999999999999" y="109.74512743628186"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="gradient" width="238" height="86"/>
+    </resources>
 </document>

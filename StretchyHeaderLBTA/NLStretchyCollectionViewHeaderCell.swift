@@ -3,7 +3,7 @@
 //  StretchyHeaderLBTA
 //
 //  Created by Thomas Goddard on 3/16/19.
-//  Copyright © 2019 Brian Voong. All rights reserved.
+//  Copyright © 2019 Neutrino Labs. All rights reserved.
 //
 
 import UIKit
