@@ -3,12 +3,12 @@
 //  StretchyHeaderLBTA
 //
 //  Created by Thomas Goddard on 3/16/19.
-//  Copyright © 2019 Brian Voong. All rights reserved.
+//  Copyright © 2019 Neutrino Labs. All rights reserved.
 //
 
 import UIKit
 
-class NLHeaderCollectionView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class NLHeaderCollectionView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,6 +19,8 @@ class NLHeaderCollectionView: UICollectionReusableView, UICollectionViewDelegate
     var animator: UIViewPropertyAnimator!
     
     var layout : NLStretchyHeaderLayout!
+    
+    var isInitialLoad : Bool = true
     
     fileprivate func setupVisualEffectBlur() {
         animator = UIViewPropertyAnimator(duration: 3.0, curve: .easeInOut, animations: { [weak self] in
@@ -90,7 +92,21 @@ class NLHeaderCollectionView: UICollectionReusableView, UICollectionViewDelegate
         if let imageName = imageName, let cell = cell {
             cell.imageView.image = UIImage.init(named: imageName)
         }
+        if isInitialLoad && indexPath.row == 0 {
+            cell?.isAtRest = true
+            self.isInitialLoad = false
+        }
         return cell!
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y:visibleRect.midY)
+        if let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint) {
+            if let cell : NLStretchyCollectionViewHeaderCell = self.collectionView.cellForItem(at: visibleIndexPath) as? NLStretchyCollectionViewHeaderCell {
+                cell.isAtRest = true
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

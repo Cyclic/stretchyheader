@@ -3,7 +3,9 @@
 //  StretchyHeaderLBTA
 //
 //  Created by Brian Voong on 12/22/18.
+//  Updated by Thomas Goddard on 03/17/19
 //  Copyright © 2018 Brian Voong. All rights reserved.
+//  Copyright © 2012 Neutrino Labs. All rights reserved.
 //
 
 import UIKit
@@ -37,11 +39,12 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
         collectionView.register(UINib.init(nibName: NLHeaderCollectionView.Identifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NLHeaderCollectionView.Identifier)
     }
     
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let contentOffsetY = scrollView.contentOffset.y
-////        headerView?.layout.invalidateLayout()
-////        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
-//    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        // HACK: headerView?.layout.invalidateLayout()
+        // FIX: We don't want to invalidate, this is the lag
+        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
+    }
     
     var headerView: NLHeaderCollectionView?
     
@@ -52,7 +55,7 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         print("Reference Size:\(view.frame.height)")
-        return .init(width: view.frame.width, height: 340)
+        return .init(width: view.frame.width, height: view.frame.height*0.6)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -68,5 +71,4 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 2 * padding, height: 50)
     }
-
 }
