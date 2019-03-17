@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="NLHeaderCollectionView" id="U6b-Vx-4bR" customClass="NLHeaderCollectionView" customModule="StretchyHeaderLBTA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="222" height="166"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceHorizontal="YES" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" dataMode="none" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEL-1h-xWT">
+                    <rect key="frame" x="0.0" y="0.0" width="222" height="166"/>
+                    <color key="backgroundColor" red="0.026256647609999999" green="0.96078431369999995" blue="0.001358403921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Bzo-Wd-BJX">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.52746559049127906" blue="0.17721466705791822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bEL-1h-xWT" secondAttribute="bottom" id="3Q0-jx-Dja"/>
+                <constraint firstItem="bEL-1h-xWT" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="CCq-0r-Y8y"/>
+                <constraint firstItem="bEL-1h-xWT" firstAttribute="width" secondItem="U6b-Vx-4bR" secondAttribute="width" priority="750" id="W8Y-b1-CAd"/>
+                <constraint firstItem="bEL-1h-xWT" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="irb-ra-XBc"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="bEL-1h-xWT" id="H1B-ez-XvQ"/>
+            </connections>
+            <point key="canvasLocation" x="204.80000000000001" y="136.73163418290855"/>
+        </collectionReusableView>
+    </objects>
+</document>
