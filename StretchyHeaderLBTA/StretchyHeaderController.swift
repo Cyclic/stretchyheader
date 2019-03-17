@@ -39,8 +39,9 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
-        headerView?.layout.invalidateLayout()
-//        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
+        // HACK: headerView?.layout.invalidateLayout()
+        // FIX: We don't want to invalidate, this is the lag
+        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
     }
     
     var headerView: NLHeaderCollectionView?

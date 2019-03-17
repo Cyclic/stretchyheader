@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StretchyHeaderLBTA/StretchyHeaderController.swift"
-            timestampString = "574539671.0653909"
+            timestampString = "574551459.660068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StretchyHeaderLBTA/StretchyHeaderController.swift"
-            timestampString = "574539671.065464"
+            timestampString = "574551459.6602221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -68,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StretchyHeaderLBTA/StretchyHeaderController.swift"
-            timestampString = "574539671.065526"
+            timestampString = "574551459.660457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -185,6 +185,22 @@
             startingLineNumber = "45"
             endingLineNumber = "45"
             landmarkName = "shouldInvalidateLayout(forBoundsChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StretchyHeaderLBTA/NLHeaderCollectionView.swift"
+            timestampString = "574551459.661624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

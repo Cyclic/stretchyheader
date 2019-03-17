@@ -12,15 +12,20 @@ class NLStretchyCollectionViewHeaderCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    public var isAtRest = false
+    
     static let Identifier = "NLStretchyCollectionViewHeaderCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-        return layoutAttributes
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if isAtRest {
+            if let superview = superview {
+                self.frame = CGRect.init(x: self.frame.origin.x, y: superview.frame.origin.y, width: superview.frame.size.width, height: superview.frame.size.height)
+            }
+        }
     }
-
 }
