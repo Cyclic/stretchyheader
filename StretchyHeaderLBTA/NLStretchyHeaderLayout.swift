@@ -41,10 +41,10 @@ class NLStretchyHeaderLayout: UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        if !newBounds.size.equalTo(collectionView!.bounds.size) {
-            itemSize = newBounds.size
-            return true
-        }
+//        if !newBounds.size.equalTo(collectionView!.bounds.size) {
+//            itemSize = newBounds.size
+//            return true
+//        }
         return true
     }
     

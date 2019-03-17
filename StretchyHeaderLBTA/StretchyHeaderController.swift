@@ -37,11 +37,11 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
         collectionView.register(UINib.init(nibName: NLHeaderCollectionView.Identifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NLHeaderCollectionView.Identifier)
     }
     
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let contentOffsetY = scrollView.contentOffset.y
-////        headerView?.layout.invalidateLayout()
-////        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
-//    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        headerView?.layout.invalidateLayout()
+//        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
+    }
     
     var headerView: NLHeaderCollectionView?
     
